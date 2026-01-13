@@ -1,16 +1,24 @@
-# i_am_rich
+# I Am Rich
 
-A new Flutter project.
+Um aplicativo Flutter simples e divertido que demonstra o uso de layouts básicos, imagens e temas personalizados.
 
-## Getting Started
+## Sobre o Projeto
 
-This project is a starting point for a Flutter application.
+Este aplicativo exibe uma tela com uma imagem, servindo como um exemplo prático de:
+- Estrutura básica de um app Flutter (`MaterialApp`, `Scaffold`).
+- Uso de `StatelessWidget` e `StatefulWidget`.
+- Exibição de imagens locais (`Image.asset`).
+- Configuração de temas com `ColorScheme.fromSeed`.
 
-A few resources to get you started if this is your first Flutter project:
+## Funcionalidades
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Tela Principal**: Exibe o título "I Am Rich" na barra de aplicativos.
+- **Visual**: Apresenta uma imagem de um diamante (`images/diamond.png`).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Como Executar
+
+Certifique-se de ter o Flutter instalado e a imagem configurada em `pubspec.yaml`.
+
+```bash
+flutter run
+```
