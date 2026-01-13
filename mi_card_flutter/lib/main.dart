@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
           child: Container(
             height: 100.0,
             width: 100.0,
+            margin: EdgeInsets.fromLTRB(30, 10, 50, 20),
             color: Colors.white,
             child: Text("Hello, World!"),
           ),
