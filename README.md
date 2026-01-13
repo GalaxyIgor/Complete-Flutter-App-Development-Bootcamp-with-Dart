@@ -1,59 +1,63 @@
-📱 The Complete Flutter App Development Bootcamp with Dart
+# 📱 The Complete Flutter App Development Bootcamp with Dart
+
+![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
 
 Este repositório contém meu progresso, desafios e projetos desenvolvidos durante o The Complete Flutter App Development Bootcamp, criado em colaboração com a equipe do Google Flutter.
 
 O curso foca em transformar um estudante em um desenvolvedor Flutter completo, cobrindo desde a base da linguagem Dart até conceitos avançados de gerenciamento de estado e integração com Firebase.
-🚀 O que aprendi
-🎯 Linguagem Dart e Lógica de Programação
 
-    Fundamentos: Variáveis, tipos de dados, loops e condicionais.
+---
 
-    Programação Orientada a Objetos (OOP): Classes, herança, mixins e protocolos.
+## 🚀 O que aprendi
 
-    Estruturas de Dados: Manipulação avançada de Listas e Mapas.
+### 🎯 Linguagem Dart e Lógica de Programação
 
-    Programação Assíncrona: Futures e Streams para chamadas de API.
+- **Fundamentos:** Variáveis, tipos de dados, loops e condicionais.
+- **Programação Orientada a Objetos (OOP):** Classes, herança, mixins e protocolos.
+- **Estruturas de Dados:** Manipulação avançada de Listas e Mapas.
+- **Programação Assíncrona:** Futures e Streams para chamadas de API.
 
-⚡ Desenvolvimento Flutter
+### ⚡ Desenvolvimento Flutter
 
-    UI/UX: Criação de interfaces modernas e responsivas para iOS e Android com uma única base de código.
+- **UI/UX:** Criação de interfaces modernas e responsivas para iOS e Android com uma única base de código.
+- **Arquitetura:** Árvore de Widgets (Widget Tree), Stateless vs. Stateful Widgets.
+- **Gerenciamento de Estado:** `setState`, Prop Drilling, Lifting State Up e o uso do pacote `Provider`.
+- **Navegação e Redes:** Implementação do padrão MVC, chamadas de API externas e consumo de JSON.
+- **Backend:** Integração com Firebase Cloud Firestore para armazenamento de dados e autenticação de usuários.
 
-    Arquitetura: Árvore de Widgets (Widget Tree), Stateless vs. Stateful Widgets.
+---
 
-    Gerenciamento de Estado: setState, Prop Drilling, Lifting State Up e o uso do pacote Provider.
-
-    Navegação e Redes: Implementação do padrão MVC, chamadas de API externas e consumo de JSON.
-
-    Backend: Integração com Firebase Cloud Firestore para armazenamento de dados e autenticação de usuários.
-
-🛠️ Projetos em Destaque
+## 🛠️ Projetos em Destaque
 
 Durante o bootcamp, construí um portfólio de mais de 15 aplicativos, incluindo:
 
-    QuizUp: Um app de perguntas e respostas para treinar lógica.
+| Projeto | Descrição |
+| :--- | :--- |
+| **QuizUp** | Um app de perguntas e respostas para treinar lógica. |
+| **Yahoo Weather** | Consumo de APIs de clima em tempo real. |
+| **Flash Chat** | Um chat completo utilizando Firebase (Firestore e Auth). |
+| **Whatsapp Clone** | Prática de layouts complexos e ListViews. |
 
-    Yahoo Weather: Consumo de APIs de clima em tempo real.
+---
 
-    Flash Chat: Um chat completo utilizando Firebase (Firestore e Auth).
-
-    Whatsapp Clone: Prática de layouts complexos e ListViews.
-
-📋 Pré-requisitos para rodar os projetos
+## 📋 Pré-requisitos para rodar os projetos
 
 Se você quiser clonar este repositório e rodar os apps localmente, precisará de:
 
-    Flutter SDK instalado.
+- [x] Flutter SDK instalado.
+- [x] Dart SDK.
+- [x] Um emulador (Android/iOS) ou dispositivo físico.
+- [x] Permissões de administrador para instalação de dependências.
 
-    Dart SDK.
+---
 
-    Um emulador (Android/iOS) ou dispositivo físico.
+## ✍️ Sobre o Curso
 
-    Permissões de administrador para instalação de dependências.
-
-✍️ Sobre o Curso
-
-    Instrutora: Dra. Angela Yu (App Brewery).
-
-    Carga Horária: +28 horas de conteúdo de alta definição.
-
-    Parceria: Conteúdo validado pela equipe oficial do Google Flutter.
+> **Instrutora:** Dra. Angela Yu (App Brewery).
+>
+> **Carga Horária:** +28 horas de conteúdo de alta definição.
+>
+> **Parceria:** Conteúdo validado pela equipe oficial do Google Flutter.
+>
+> 🔗 [Acesse o curso na Udemy](https://www.udemy.com/course/flutter-bootcamp-with-dart/?couponCode=CP250105G1)
