@@ -49,54 +49,38 @@ class MyApp extends StatelessWidget {
               Card(
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                 color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.phone,
-                        color: Colors.black,
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        '+123 456 7890',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: 'SourceSansPro',
-                          fontSize: 20.0,
-                        ),
-                      ),
-                    ],
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.black,
                   ),
-                ),
+                  title: Text(
+                    '+123 456 7890',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'SourceSansPro',
+                      fontSize: 20.0,
+                    ),
+                  ),
+                )
               ),
               Card(
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                 color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.email,
-                        color: Colors.black,
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        'galaxy@email.com',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: 'SourceSansPro',
-                          fontSize: 20.0,
-                        ),
-                      ),
-                    ],
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.black,
                   ),
-                ),
+                  title: Text(
+                    'galaxy@email.com',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'SourceSansPro',
+                      fontSize: 20.0,
+                    ),
+                  ),
+                )
               ),
             ],                                
           ),
