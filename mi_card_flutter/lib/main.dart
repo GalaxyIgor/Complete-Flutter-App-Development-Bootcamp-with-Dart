@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(
@@ -7,6 +8,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   
   @override
   Widget build(BuildContext context) {
@@ -16,6 +19,8 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CircleAvatar(
                 backgroundImage: AssetImage( 'images/avatar.png'),
@@ -25,13 +30,12 @@ class MyApp extends StatelessWidget {
               ),
               Text(
                 'Galaxy',
-                style: TextStyle(
-                  fontFamily: 'Pacifico',
-                  fontSize: 40.0,
+                style: GoogleFonts.pacifico(
+                  fontSize: 40,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(height: 10.0),
               Text(
                 'FLUTTER DEVELOPER',
                 style: TextStyle(
@@ -63,21 +67,24 @@ class MyApp extends StatelessWidget {
                         fontSize: 20.0,
                       ),
                     ),
-                    Container(
+                  ],
+                ),
+              ),
+              Container(
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                 padding: EdgeInsets.all(10.0),
                 color: Colors.white,
                 child: Row(
                   children: [
                     Icon(
-                      Icons.phone,
+                      Icons.email,
                       color: Colors.black,
                     ),
                     SizedBox(
                       width: 10.0,
                     ),
                     Text(
-                      '+123 456 7890',
+                      'galaxy@email.com',
                       style: TextStyle(
                         color: Colors.black,
                         fontFamily: 'SourceSansPro',
@@ -86,11 +93,9 @@ class MyApp extends StatelessWidget {
                     ),
                   ],
                 ),
-              )    
-            ],
+              ),
+            ],                                
           ),
-        ),]
-      ),
         ),
       ),
     );
