@@ -45,8 +45,18 @@ class MyApp extends StatelessWidget {
                   letterSpacing: 2.5,
                   fontWeight: FontWeight.bold,
                 ),
-              ),  
+              ),
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.grey,
+                ),
+              ), 
               Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4), 
+                ),
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                 color: Colors.white,
                 child: ListTile(
@@ -65,6 +75,9 @@ class MyApp extends StatelessWidget {
                 )
               ),
               Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4), 
+                ),
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                 color: Colors.white,
                 child: ListTile(
