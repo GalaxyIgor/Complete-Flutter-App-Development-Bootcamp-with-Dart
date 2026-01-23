@@ -8,9 +8,7 @@ class XylophoneApp extends StatelessWidget {
   const XylophoneApp({super.key});
                 
   @override
-  Widget build(BuildContext context) {
-    final player = AudioPlayer();
-    
+  Widget build(BuildContext context) { 
     final colors = [
       const Color(0xFF0FC2C0),
       const Color(0xFF0CABA8),
@@ -21,6 +19,10 @@ class XylophoneApp extends StatelessWidget {
       const Color(0xFF014443),
     ];
 
+    void playSound(int soundNumber) {
+      final player = AudioPlayer();
+      player.play(AssetSource('note$soundNumber.wav'));
+    }
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -45,7 +47,7 @@ class XylophoneApp extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    player.play(AssetSource('note1.wav'));
+                    playSound(1);
                   },
                   child: Container(color: colors[0]),
                 ),
@@ -53,7 +55,7 @@ class XylophoneApp extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    player.play(AssetSource('note2.wav'));
+                    playSound(2);
                   },
                   child: Container(color: colors[1]),
                 ),
@@ -61,7 +63,7 @@ class XylophoneApp extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    player.play(AssetSource('note3.wav'));
+                    playSound(3);
                   },
                   child: Container(color: colors[2]),
                 ),
@@ -69,7 +71,7 @@ class XylophoneApp extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    player.play(AssetSource('note4.wav'));
+                    playSound(4);
                   },
                   child: Container(color: colors[3]),
                 ),
@@ -77,7 +79,7 @@ class XylophoneApp extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    player.play(AssetSource('note5.wav'));
+                    playSound(5);
                   },
                   child: Container(color: colors[4]),
                 ),
@@ -85,7 +87,7 @@ class XylophoneApp extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    player.play(AssetSource('note6.wav'));
+                    playSound(6);
                   },
                   child: Container(color: colors[5]),
                 ),
@@ -93,7 +95,7 @@ class XylophoneApp extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    player.play(AssetSource('note7.wav'));
+                    playSound(7);
                   },
                   child: Container(color: colors[6]),
                 ),
