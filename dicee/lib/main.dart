@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 void main() {
   return runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         appBar: AppBar(
-          title: Text('Dicee'),
+          title: Text(
+            'Dicee',
+            style: TextStyle(
+              color: const Color.fromARGB(255, 255, 255, 255),
+            ),
+            ),
           backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         ),
         body: DicePage(),
@@ -20,6 +26,10 @@ class DicePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var leftDiceNumber = 1;
+    var rightDiceNumber = 1;
+
+    
     return Center(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -30,18 +40,18 @@ class DicePage extends StatelessWidget {
           Expanded(
             child: TextButton(
               onPressed: () {
-                print('The button was clicked!');
+                print('The left button was clicked!');
               },
-              child: Image.asset('images/dice1.png')
+              child: Image.asset('images/dice$leftDiceNumber.png')
             )
           ),
           // Second Dice Image
           Expanded(
             child: TextButton(
               onPressed: () { 
-                print('The button was clicked!');
+                print('The right button was clicked!');
               },
-              child: Image.asset('images/dice2.png'))
+              child: Image.asset('images/dice$rightDiceNumber.png'))
           ),
         ]
       ),
