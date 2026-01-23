@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(
       MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: BallPage(),
       ),    
     );
@@ -33,18 +34,19 @@ class Ball extends StatefulWidget {
   const Ball({super.key});
 
   @override
-  _BallState createState() => _BallState();
+  BallState createState() => BallState();
 }
 
-class _BallState extends State<Ball> {
-  int ballNumber = 2;
-
-
+class BallState extends State<Ball> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Image.asset('images/ball$ballNumber.png'),
+      child: TextButton(
+        onPressed: () {
+          print('I got clicked');
+        },
+        child: Image.asset('images/ball1.png'),
+      ),
     );
   }
 }
-
