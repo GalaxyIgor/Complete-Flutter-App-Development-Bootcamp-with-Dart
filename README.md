@@ -8,6 +8,17 @@ This repository contains my progress, challenges, and projects developed during 
 The course focuses on turning a student into a full-fledged Flutter developer, covering everything from the foundations of the Dart language to advanced state management concepts and Firebase integration.
 
 ---
+## 🛠️ Modernization & Customization
+
+> [!IMPORTANT]
+> While the course provides a solid foundation, **I have developed most of these projects using the latest Flutter versions and updated libraries.** > 
+> Key improvements I've implemented:
+> * **Null Safety:** All code migrated to the latest Dart standards.
+> * **Modern Widgets:** Replaced deprecated widgets (like `FlatButton`) with modern equivalents (`TextButton`, `ElevatedButton`).
+> * **Dependency Management:** All packages updated to their most recent stable versions.
+> * **Custom UI:** Personal design enhancements beyond the course's basic requirements.
+
+---
 
 ## 🚀 What I've Learned
 
