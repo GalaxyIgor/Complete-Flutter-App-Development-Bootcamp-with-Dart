@@ -19,9 +19,21 @@ class XylophoneApp extends StatelessWidget {
       const Color(0xFF014443),
     ];
 
+    
     void playSound(int soundNumber) {
       final player = AudioPlayer();
       player.play(AssetSource('note$soundNumber.wav'));
+    }
+
+    Widget buildkey(int value) {
+      return Expanded(
+        child: GestureDetector(
+          onTap: () {
+            playSound(value + 1);
+          },
+          child: Container(color: colors[value]),
+        ),
+      );
     }
 
     return MaterialApp(
@@ -44,62 +56,13 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    playSound(1);
-                  },
-                  child: Container(color: colors[0]),
-                ),
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    playSound(2);
-                  },
-                  child: Container(color: colors[1]),
-                ),
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    playSound(3);
-                  },
-                  child: Container(color: colors[2]),
-                ),
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    playSound(4);
-                  },
-                  child: Container(color: colors[3]),
-                ),
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    playSound(5);
-                  },
-                  child: Container(color: colors[4]),
-                ),
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    playSound(6);
-                  },
-                  child: Container(color: colors[5]),
-                ),
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    playSound(7);
-                  },
-                  child: Container(color: colors[6]),
-                ),
-              ),
+              buildkey(0),
+              buildkey(1),
+              buildkey(2),
+              buildkey(3),
+              buildkey(4),
+              buildkey(5),
+              buildkey(6),
             ],
           )
 
