@@ -20,20 +20,31 @@ class DicePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        // Expanded widget to make the image take equal space
-        // First Dice Image
-        Expanded(
-          child: Image.asset('images/dice1.png')
-        ),
-        // Second Dice Image
-        Expanded(
-          child: Image.asset('images/dice2.png')
-        ),
-      ]
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          // Expanded widget to make the image take equal space
+          // First Dice Image
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                print('The button was clicked!');
+              },
+              child: Image.asset('images/dice1.png')
+            )
+          ),
+          // Second Dice Image
+          Expanded(
+            child: TextButton(
+              onPressed: () { 
+                print('The button was clicked!');
+              },
+              child: Image.asset('images/dice2.png'))
+          ),
+        ]
+      ),
     );
   }
 } 
