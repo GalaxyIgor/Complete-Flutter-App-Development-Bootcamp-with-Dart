@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,28 +9,50 @@ void main() {
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Dicee',
-            style: TextStyle(
-              color: const Color.fromARGB(255, 255, 255, 255),
+            style: TextStyle( 
+              color: Color.fromARGB(255, 255, 255, 255), 
             ),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.black,
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(1),
+            child: Container(
+              height: 2,
+              color: Colors.white12,
             ),
-          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+          ),
         ),
-        body: DicePage(),
+        body: SafeArea(
+          child: DicePage(),
+       ),
       ),
     ),
   );
 }
 
-class DicePage extends StatelessWidget {
+class DicePage extends StatefulWidget {
   const DicePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    var leftDiceNumber = 1;
-    var rightDiceNumber = 1;
+  State<DicePage> createState() => _DicePageState();
+}
 
+class _DicePageState extends State<DicePage> {
+  int leftDiceNumber = 1;
+  int rightDiceNumber = 1;
+
+  void rollDice() {
+    setState(() {
+      leftDiceNumber = Random().nextInt(6) + 1;
+      rightDiceNumber = Random().nextInt(6) + 1;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     
     return Center(
       child: Row(
@@ -40,7 +64,7 @@ class DicePage extends StatelessWidget {
           Expanded(
             child: TextButton(
               onPressed: () {
-                print('The left button was clicked!');
+                rollDice();  
               },
               child: Image.asset('images/dice$leftDiceNumber.png')
             )
@@ -48,8 +72,8 @@ class DicePage extends StatelessWidget {
           // Second Dice Image
           Expanded(
             child: TextButton(
-              onPressed: () { 
-                print('The right button was clicked!');
+              onPressed: () {  
+                rollDice();
               },
               child: Image.asset('images/dice$rightDiceNumber.png'))
           ),
