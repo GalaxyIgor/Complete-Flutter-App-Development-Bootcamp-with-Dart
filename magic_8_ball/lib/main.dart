@@ -16,16 +16,18 @@ class BallPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   return Scaffold(
-    backgroundColor: Colors.blue,
+    backgroundColor: const Color.fromARGB(255, 255, 255, 255),
     appBar: AppBar(
       title: Text(
-        'Ask Me Anything',
+        'Ask Me Anything...',
+        textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.white
           ),
         ),
       backgroundColor: Colors.blue.shade900,
-      elevation: 4,
+      elevation: 8,
+      shadowColor: Colors.black,
     ),
     body: Ball(),
     );
@@ -49,7 +51,9 @@ class BallState extends State<Ball> {
     return Center(
       child: TextButton(
         onPressed: () {
-          ballNumber = 1 + Random().nextInt(5);
+          setState(() {
+            ballNumber = Random().nextInt(5) + 1;
+          });
         },
         child: Image.asset('images/ball$ballNumber.png'),
       ),
