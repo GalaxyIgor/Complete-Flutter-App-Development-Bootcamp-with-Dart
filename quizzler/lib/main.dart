@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(Quizzler());
+void main() => runApp(const Quizzler());
 
 class Quizzler extends StatelessWidget {
   const Quizzler({super.key});
@@ -8,9 +8,17 @@ class Quizzler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Quizzler",
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: const Color.fromARGB(255, 18, 141, 207),
+        ),
         backgroundColor: Colors.grey.shade900,
-        body: SafeArea(
+        body: const SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             child: QuizPage(),
@@ -29,6 +37,62 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  int questionNumber = 0;
+  int scoreCount = 0;
+
+  List<Icon> scoreKeeper = [];
+  
+  List<String> questions = [
+    'You can lead a cow down stairs but not up stairs.',
+    'Approximately one quarter of human bones are in the feet.', 
+    'A slug\'s blood is green.',
+  ];
+
+  List<bool> answers = [false, true, true];
+
+  void checkAnswer(bool userPickedAnswer) {
+    bool correctAnswer = answers[questionNumber];
+
+    setState(() {
+      if (userPickedAnswer == correctAnswer) {
+        scoreCount++;
+        scoreKeeper.add(const Icon(
+          Icons.check,
+          color: Color.fromARGB(255, 0, 198, 7),
+        ));
+      } else {
+        scoreKeeper.add(const Icon(
+          Icons.close,
+          color: Color.fromARGB(255, 239, 16, 0),
+        ));
+      }
+
+      if (questionNumber < questions.length - 1) {
+        questionNumber++;
+      } else {
+        // Navegação enviando o scoreCount atualizado
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (context, animation1, animation2) => FinishPage(
+              totalScore: scoreCount, // Passando o valor local para o parâmetro da FinishPage
+              totalQuestions: questions.length,
+            ),
+            transitionDuration: Duration.zero,
+            reverseTransitionDuration: Duration.zero,
+          ),
+        ).then((value) {
+          // Resetar ao voltar
+          setState(() {
+            questionNumber = 0;
+            scoreCount = 0;
+            scoreKeeper = [];
+          });
+        });
+      }
+    });
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -38,12 +102,12 @@ class _QuizPageState extends State<QuizPage> {
         Expanded(
           flex: 5,
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                questions[questionNumber],
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 25.0,
                   color: Colors.white,
                 ),
@@ -53,58 +117,111 @@ class _QuizPageState extends State<QuizPage> {
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(15.0),
             child: TextButton(
               style: TextButton.styleFrom(
-                backgroundColor: Colors.green,
+                backgroundColor: const Color.fromARGB(255, 0, 198, 7),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.zero,
+                  borderRadius: BorderRadius.circular(100),
                 ),
+                elevation: 4,
               ),
-              child: Text(
-                'True',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                ),
-              ),
-              onPressed: () {
-                //The user picked true.
-              },
+              child: const Text('True', style: TextStyle(color: Colors.white, fontSize: 20.0)),
+              onPressed: () => checkAnswer(true),
             ),
           ),
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(15.0),
             child: TextButton(
               style: TextButton.styleFrom(
-                backgroundColor: Colors.red,
+                backgroundColor: const Color.fromARGB(255, 239, 16, 0),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.zero,
+                  borderRadius: BorderRadius.circular(50),
                 ),
+                elevation: 4,
               ),
-              child: Text(
-                'False',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.white,
-                ),
-              ),
-              onPressed: () {
-                //The user picked false.
-              },
+              child: const Text('False', style: TextStyle(color: Colors.white, fontSize: 20.0)),
+              onPressed: () => checkAnswer(false),
             ),
           ),
         ),
-        //TODO: Add a Row here as your score keeper
+        Row(children: scoreKeeper)
       ],
     );
   }
 }
 
-/*
-question1: 'You can lead a cow down stairs but not up stairs.', false,
-question2: 'Approximately one quarter of human bones are in the feet.', true,
-question3: 'A slug\'s blood is green.', true,
-*/
+// A classe FinishPage deve estar fora de qualquer outra classe
+class FinishPage extends StatelessWidget {
+  final int totalScore;
+  final int totalQuestions;
+
+  const FinishPage({
+    super.key, 
+    required this.totalScore, 
+    required this.totalQuestions,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: const Center(child: Text("Quizzler", style: TextStyle(color: Colors.white))),
+        backgroundColor: const Color.fromARGB(255, 18, 141, 207),
+      ),
+      backgroundColor: Colors.grey.shade900,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                flex: 5,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.emoji_events, size: 100, color: Colors.yellow),
+                    const SizedBox(height: 20),
+                    const Text(
+                      'Quiz Finalizado!',
+                      style: TextStyle(fontSize: 30, color: Colors.white),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      'Você acertou $totalScore de $totalQuestions',
+                      style: TextStyle(
+                        fontSize: 22, 
+                        color: Colors.grey.shade400,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 18, 141, 207),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                      elevation: 4,
+                    ),
+                    child: const Text('Reset', style: TextStyle(fontSize: 20.0, color: Colors.white)),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
