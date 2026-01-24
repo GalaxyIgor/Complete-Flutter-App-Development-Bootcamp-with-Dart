@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizzler/question.dart';
 
 void main() => runApp(const Quizzler());
 
@@ -41,17 +42,15 @@ class _QuizPageState extends State<QuizPage> {
   int scoreCount = 0;
 
   List<Icon> scoreKeeper = [];
-  
-  List<String> questions = [
-    'You can lead a cow down stairs but not up stairs.',
-    'Approximately one quarter of human bones are in the feet.', 
-    'A slug\'s blood is green.',
+
+  List<Question> questionBank = [
+    Question('You can lead a cow down stairs but not up stairs.', false),  
+    Question('Approximately one quarter of human bones are in the feet.', true), 
+    Question('A slug\'s blood is green.', true),  
   ];
 
-  List<bool> answers = [false, true, true];
-
   void checkAnswer(bool userPickedAnswer) {
-    bool correctAnswer = answers[questionNumber];
+    bool correctAnswer = questionBank[questionNumber].questionAnswer;
 
     setState(() {
       if (userPickedAnswer == correctAnswer) {
@@ -67,7 +66,7 @@ class _QuizPageState extends State<QuizPage> {
         ));
       }
 
-      if (questionNumber < questions.length - 1) {
+      if (questionNumber < questionBank.length - 1) {
         questionNumber++;
       } else {
         // Navegação enviando o scoreCount atualizado
@@ -76,7 +75,7 @@ class _QuizPageState extends State<QuizPage> {
           PageRouteBuilder(
             pageBuilder: (context, animation1, animation2) => FinishPage(
               totalScore: scoreCount, // Passando o valor local para o parâmetro da FinishPage
-              totalQuestions: questions.length,
+              totalQuestions: questionBank.length,
             ),
             transitionDuration: Duration.zero,
             reverseTransitionDuration: Duration.zero,
@@ -105,7 +104,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionNumber],
+                questionBank[questionNumber].questionText,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 25.0,
