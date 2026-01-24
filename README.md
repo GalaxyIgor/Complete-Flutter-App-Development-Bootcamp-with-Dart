@@ -3,61 +3,72 @@
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
 
-Este repositório contém meu progresso, desafios e projetos desenvolvidos durante o The Complete Flutter App Development Bootcamp, criado em colaboração com a equipe do Google Flutter.
+This repository contains my progress, challenges, and projects developed during The Complete Flutter App Development Bootcamp, created in collaboration with the Google Flutter team.
 
-O curso foca em transformar um estudante em um desenvolvedor Flutter completo, cobrindo desde a base da linguagem Dart até conceitos avançados de gerenciamento de estado e integração com Firebase.
+The course focuses on turning a student into a full-fledged Flutter developer, covering everything from the foundations of the Dart language to advanced state management concepts and Firebase integration.
+
+---
+## 🛠️ Modernization & Customization
+
+> [!IMPORTANT]
+> While the course provides a solid foundation, **I have developed most of these projects using the latest Flutter versions and updated libraries.** > 
+> Key improvements I've implemented:
+> * **Null Safety:** All code migrated to the latest Dart standards.
+> * **Modern Widgets:** Replaced deprecated widgets (like `FlatButton`) with modern equivalents (`TextButton`, `ElevatedButton`).
+> * **Dependency Management:** All packages updated to their most recent stable versions.
+> * **Custom UI:** Personal design enhancements beyond the course's basic requirements.
 
 ---
 
-## 🚀 O que aprendi
+## 🚀 What I've Learned
 
-### 🎯 Linguagem Dart e Lógica de Programação
+### 🎯 Dart Language and Programming Logic
 
-- **Fundamentos:** Variáveis, tipos de dados, loops e condicionais.
-- **Programação Orientada a Objetos (OOP):** Classes, herança, mixins e protocolos.
-- **Estruturas de Dados:** Manipulação avançada de Listas e Mapas.
-- **Programação Assíncrona:** Futures e Streams para chamadas de API.
+- **Fundamentals:** Variables, data types, loops, and conditionals.
+- **Object-Oriented Programming (OOP):** Classes, inheritance, mixins, and protocols.
+- **Data Structures:** Advanced manipulation of Lists and Maps.
+- **Asynchronous Programming:** Futures and Streams for API calls.
 
-### ⚡ Desenvolvimento Flutter
+### ⚡ Flutter Development
 
-- **UI/UX:** Criação de interfaces modernas e responsivas para iOS e Android com uma única base de código.
-- **Arquitetura:** Árvore de Widgets (Widget Tree), Stateless vs. Stateful Widgets.
-- **Gerenciamento de Estado:** `setState`, Prop Drilling, Lifting State Up e o uso do pacote `Provider`.
-- **Navegação e Redes:** Implementação do padrão MVC, chamadas de API externas e consumo de JSON.
-- **Backend:** Integração com Firebase Cloud Firestore para armazenamento de dados e autenticação de usuários.
+- **UI/UX:** Building modern and responsive interfaces for iOS and Android with a single codebase.
+- **Architecture:** Widget Tree, Stateless vs. Stateful Widgets.
+- **State Management:** `setState`, Prop Drilling, Lifting State Up, and using the `Provider` package.
+- **Navigation and Networking:** Implementing the MVC pattern, external API calls, and JSON consumption.
+- **Backend:** Integration with Firebase Cloud Firestore for data storage and user authentication.
 
 ---
 
-## 🛠️ Projetos em Destaque
+## 🛠️ Featured Projects
 
-Durante o bootcamp, construí um portfólio de mais de 15 aplicativos, incluindo:
+During the bootcamp, I built a portfolio of over 15 applications, including:
 
-| Projeto | Descrição |
+| Project | Description |
 | :--- | :--- |
-| **QuizUp** | Um app de perguntas e respostas para treinar lógica. |
-| **Yahoo Weather** | Consumo de APIs de clima em tempo real. |
-| **Flash Chat** | Um chat completo utilizando Firebase (Firestore e Auth). |
-| **Whatsapp Clone** | Prática de layouts complexos e ListViews. |
+| **QuizUp** | A trivia app to practice programming logic. |
+| **Yahoo Weather** | Consuming real-time weather APIs. |
+| **Flash Chat** | A full-featured chat app using Firebase (Firestore and Auth). |
+| **Whatsapp Clone** | Practicing complex layouts and ListViews. |
 
 ---
 
-## 📋 Pré-requisitos para rodar os projetos
+## 📋 Prerequisites to run the projects
 
-Se você quiser clonar este repositório e rodar os apps localmente, precisará de:
+If you want to clone this repository and run the apps locally, you will need:
 
-- [x] Flutter SDK instalado.
+- [x] Flutter SDK installed.
 - [x] Dart SDK.
-- [x] Um emulador (Android/iOS) ou dispositivo físico.
-- [x] Permissões de administrador para instalação de dependências.
+- [x] An emulator (Android/iOS) or a physical device.
+- [x] Administrator permissions for dependency installation.
 
 ---
 
-## ✍️ Sobre o Curso
+## ✍️ About the Course
 
-> **Instrutora:** Dra. Angela Yu (App Brewery).
+> **Instructor:** Dr. Angela Yu (App Brewery).
 >
-> **Carga Horária:** +28 horas de conteúdo de alta definição.
+> **Course Load:** 28+ hours of high-definition content.
 >
-> **Parceria:** Conteúdo validado pela equipe oficial do Google Flutter.
+> **Partnership:** Content validated by the official Google Flutter team.
 >
-> 🔗 [Acesse o curso na Udemy](https://www.udemy.com/course/flutter-bootcamp-with-dart/?couponCode=CP250105G1)
+> 🔗 [Access the course on Udemy](https://www.udemy.com/course/flutter-bootcamp-with-dart/?couponCode=CP250105G1)
