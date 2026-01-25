@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quizzler/question.dart';
+import 'package:quizzler/quiz_brain.dart';
+
+QuizBrain quizBrain = QuizBrain();
 
 void main() => runApp(const Quizzler());
 
@@ -43,14 +45,10 @@ class _QuizPageState extends State<QuizPage> {
 
   List<Icon> scoreKeeper = [];
 
-  List<Question> questionBank = [
-    Question('You can lead a cow down stairs but not up stairs.', false),  
-    Question('Approximately one quarter of human bones are in the feet.', true), 
-    Question('A slug\'s blood is green.', true),  
-  ];
+
 
   void checkAnswer(bool userPickedAnswer) {
-    bool correctAnswer = questionBank[questionNumber].questionAnswer;
+    bool correctAnswer = quizBrain.questionBank[questionNumber].questionAnswer;
 
     setState(() {
       if (userPickedAnswer == correctAnswer) {
@@ -66,7 +64,7 @@ class _QuizPageState extends State<QuizPage> {
         ));
       }
 
-      if (questionNumber < questionBank.length - 1) {
+      if (questionNumber < quizBrain.questionBank.length - 1) {
         questionNumber++;
       } else {
         // Navegação enviando o scoreCount atualizado
@@ -75,7 +73,7 @@ class _QuizPageState extends State<QuizPage> {
           PageRouteBuilder(
             pageBuilder: (context, animation1, animation2) => FinishPage(
               totalScore: scoreCount, // Passando o valor local para o parâmetro da FinishPage
-              totalQuestions: questionBank.length,
+              totalQuestions: quizBrain.questionBank.length,
             ),
             transitionDuration: Duration.zero,
             reverseTransitionDuration: Duration.zero,
@@ -104,7 +102,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questionBank[questionNumber].questionText,
+                quizBrain.questionBank[questionNumber].questionText,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 25.0,

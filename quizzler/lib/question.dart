@@ -3,5 +3,8 @@ class Question {
   bool questionAnswer;
 
 
-  Question(this.questionText, this.questionAnswer);
+  Question(
+    this.questionText, 
+    this.questionAnswer
+  );
 }
