@@ -43,13 +43,15 @@ The course focuses on turning a student into a full-fledged Flutter developer, c
 
 During the bootcamp, I built a portfolio of over 15 applications, including:
 
-| Project | Description |
-| :--- | :--- |
-| **QuizUp** | A trivia app to practice programming logic. |
-| **Yahoo Weather** | Consuming real-time weather APIs. |
-| **Flash Chat** | A full-featured chat app using Firebase (Firestore and Auth). |
-| **Whatsapp Clone** | Practicing complex layouts and ListViews. |
-
+| Project | Description | Key Features / Skills |
+| :--- | :--- | :--- |
+| **I Am Rich** | A fundamental UI project focusing on asset management and app icons. | Image assets, Scaffold, and Layout basics. |
+| **I Am Poor** | A companion UI project designed to practice layout alignment and custom styling. | Centering widgets and UI structure. |
+| **MiCard** | A personal business card app featuring a clean, professional interface. | Custom Fonts, Material Icons, and Card widgets. |
+| **Dicee** | An interactive dice-rolling app with randomized outcomes. | StatefulWidgets and Dart's Random logic. |
+| **Magic 8 Ball** | A decision-making app that provides random answers to user questions. | State management and gesture detection. |
+| **Xylophone** | A functional musical instrument app that plays different tones. | External packages (audioplayers) and code refactoring. |
+| **Quizzler** | A trivia app with score tracking and logic-based progression. | OOP (Classes), Lists, and Boolean logic. |
 ---
 
 ## 📋 Prerequisites to run the projects
