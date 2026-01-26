@@ -1,7 +1,10 @@
 import 'package:quizzler/question.dart';
 
 class QuizBrain{
-  List<Question> questionBank = [
+  int _questionNumber = 0;
+  int _scoreCount = 0;
+
+  final List<Question> _questionBank = [
     Question('Some cats are actually allergic to humans', true),
     Question('You can lead a cow down stairs but not up stairs.', false),
     Question('Approximately one quarter of human bones are in the feet.', true),
@@ -16,4 +19,46 @@ class QuizBrain{
     Question('Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.',true),
     Question('In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',true),
   ];
+
+  String getQuestionText() {
+    return _questionBank[_questionNumber].questionText;
+  }
+
+  bool getQuestionAnswer() {
+    return _questionBank[_questionNumber].questionAnswer;
+  }
+
+  int getQuestionLength(){
+    return _questionBank.length;
+  }
+
+  void nextQuestion(){
+    if(_questionNumber < _questionBank.length - 1){
+      _questionNumber++;
+    }
+  }
+
+  bool isFinished() {
+    return _questionNumber >= _questionBank.length - 1;
+  }
+
+  void resetQuestion() {
+    _questionNumber = 0;
+  }
+
+  void addScore() {
+    _scoreCount++;
+  }
+
+  int get scoreCount => _scoreCount;
+
+  void resetScore() {
+    _scoreCount = 0;
+  }
+
+  void reset() {
+  _questionNumber = 0;
+  _scoreCount = 0;
+}
+  
 }
