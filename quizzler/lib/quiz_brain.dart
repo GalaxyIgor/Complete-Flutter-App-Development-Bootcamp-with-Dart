@@ -60,5 +60,4 @@ class QuizBrain{
   _questionNumber = 0;
   _scoreCount = 0;
 }
-  
 }

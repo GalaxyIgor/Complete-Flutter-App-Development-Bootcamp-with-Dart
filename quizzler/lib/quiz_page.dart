@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:quizzler/finish_page.dart';
+// This is the final page I created.
+// import 'package:quizzler/finish_page.dart';
 import 'package:quizzler/quiz_brain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -20,7 +22,8 @@ class _QuizPageState extends State<QuizPage> {
 
   void checkAnswer(bool userPickedAnswer) {
     bool correctAnswer = quizBrain.getQuestionAnswer();
-    int totalQuestions = quizBrain.getQuestionLength();
+    // This is the final page I created.
+    // int totalQuestions = quizBrain.getQuestionLength();
 
     setState(() {
       if (userPickedAnswer == correctAnswer) {
@@ -39,26 +42,54 @@ class _QuizPageState extends State<QuizPage> {
       if (quizBrain.isFinished() == false) {
         quizBrain.nextQuestion();
       } else {
-        Navigator.push(
-          context,
-          PageRouteBuilder(
-            pageBuilder: (context, animation1, animation2) => FinishPage(
-              totalScore: quizBrain.scoreCount, 
-              totalQuestions: totalQuestions,
+      // This is the final page I created.
+      //   Navigator.push(
+      //     context,
+      //     PageRouteBuilder(
+      //       pageBuilder: (context, animation1, animation2) => FinishPage(
+      //         totalScore: quizBrain.scoreCount, 
+      //         totalQuestions: totalQuestions,
+      //       ),
+      //       transitionDuration: Duration.zero,
+      //       reverseTransitionDuration: Duration.zero,
+      //     ),
+      //   ).then((value) {
+      //     setState(() {
+      //       quizBrain.reset();
+      //       scoreKeeper = [];
+      //     });
+      //   });
+      // }
+      
+      // This is the final challenge of this project from course
+      Alert(
+        context: context,
+        title: 'Finished!',
+        desc: 'You\'ve reached the end of the quiz.',
+        style: const AlertStyle(
+          backgroundColor: Color.fromARGB(255, 40, 40, 40),
+        ),
+        buttons:[
+          DialogButton(
+            onPressed: () {
+              Navigator.pop(context);
+              setState(() {
+                quizBrain.reset();
+                scoreKeeper = [];
+              });
+            },
+            width: 120,
+            child: const Text(
+              "Restart",
+              style: TextStyle(color: Color.fromARGB(255, 65, 65, 65), fontSize: 20),
             ),
-            transitionDuration: Duration.zero,
-            reverseTransitionDuration: Duration.zero,
-          ),
-        ).then((value) {
-          setState(() {
-            quizBrain.reset();
-            scoreKeeper = [];
-          });
-        });
-      }
-    });
-  }
-  
+          )
+          ]
+      ).show();
+    }
+  });
+}
+
   @override
   Widget build(BuildContext context) {
     return Column(
