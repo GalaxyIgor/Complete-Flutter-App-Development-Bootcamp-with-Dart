@@ -66,10 +66,10 @@ class _StoryPageState extends State<StoryPage> {
                     elevation: 4,
                     shadowColor: Colors.black,
                   ),
-                  child: const Text(
+                  child: Text(
                     //TODO: Step 13 - Use the storyBrain to get the text for choice 1.
-                    'Choice 1',
-                    style: TextStyle(
+                    storyBrain.getChoice1(),
+                    style: const TextStyle(
                       fontSize: 20.0,
                     ),
                   ),
@@ -93,10 +93,10 @@ class _StoryPageState extends State<StoryPage> {
                     shadowColor: Colors.black,
                   
                   ),
-                  child: const Text(
+                  child: Text(
                     //TODO: Step 14 - Use the storyBrain to get the text for choice 2.
-                    'Choice 2',
-                    style: TextStyle(
+                    storyBrain.getChoice2(),
+                    style: const TextStyle(
                       fontSize: 20.0,
                     ),
                   ),
