@@ -52,6 +52,7 @@ During the bootcamp, I built a portfolio of over 15 applications, including:
 | **Magic 8 Ball** | A decision-making app that provides random answers to user questions. | State management and gesture detection. |
 | **Xylophone** | A functional musical instrument app that plays different tones. | External packages (audioplayers) and code refactoring. |
 | **Quizzler** | A trivia app with score tracking and logic-based progression. | OOP (Classes), Lists, and Boolean logic. |
+| **Destini** | A "choose-your-own-adventure" story app with complex branching narrative paths. | Pattern Matching (Switch), State Management, and Conditional UI Logic. |
 ---
 
 ## 📋 Prerequisites to run the projects
