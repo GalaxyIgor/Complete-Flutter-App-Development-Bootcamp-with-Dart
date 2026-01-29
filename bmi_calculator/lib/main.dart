@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(BMICalculator());
 
 class BMICalculator extends StatelessWidget {
+  const BMICalculator({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,8 +14,10 @@ class BMICalculator extends StatelessWidget {
 }
 
 class InputPage extends StatefulWidget {
+  const InputPage({super.key});
+
   @override
-  _InputPageState createState() => _InputPageState();
+  State<InputPage> createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
@@ -28,6 +32,7 @@ class _InputPageState extends State<InputPage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
+        onPressed: () => print('Floating Action Button Pressed'),
       ),
     );
   }
