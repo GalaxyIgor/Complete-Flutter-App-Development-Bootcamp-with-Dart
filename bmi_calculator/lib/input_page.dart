@@ -22,27 +22,8 @@ enum Gender {
 
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor = customInactiveColor;
-  Color femaleCardColor = customInactiveColor;
+  Gender? selectedGender;
 
-  // 1 = male, 2 = female
-  void updateColor(Gender selectGender){
-    if(selectGender == Gender.male){
-      if(maleCardColor == customInactiveColor){
-        maleCardColor = customCardColor;
-        femaleCardColor = customInactiveColor;
-      } else {
-        maleCardColor = customInactiveColor;
-      }
-    } else if(selectGender == Gender.female){
-      if(femaleCardColor == customInactiveColor){
-        femaleCardColor = customCardColor;
-        maleCardColor = customInactiveColor;
-      } else {
-        femaleCardColor = customInactiveColor;
-      }
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,9 +38,9 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: GestureDetector(
-                    onTap: () => setState(() => updateColor(Gender.male)),
+                    onTap: () => setState(() => selectedGender = Gender.male),
                     child: ReusableCard(
-                      colour: maleCardColor, 
+                      colour: selectedGender == Gender.male ? customCardColor : customInactiveColor, 
                       cardChild: ButtonIcon(icon: FontAwesomeIcons.mars, text: "MALE"), 
                     ),
                   ),
@@ -67,9 +48,9 @@ class _InputPageState extends State<InputPage> {
                 
                 Expanded(
                   child: GestureDetector(
-                    onTap: () => setState(() => updateColor(Gender.female)),
+                    onTap: () => setState(() => selectedGender = Gender.female),
                     child: ReusableCard(
-                      colour: femaleCardColor, 
+                      colour: selectedGender == Gender.female ? customCardColor : customInactiveColor,
                       cardChild: ButtonIcon(icon: FontAwesomeIcons.venus, text: "FEMALE"),
                     ),
                   ),
