@@ -10,10 +10,33 @@ class InputPage extends StatefulWidget {
   State<InputPage> createState() => _InputPageState();
 }
 
+const Color customCardColor = Color(0xFF1D1E33);
+const Color customButtonColor = Color(0xFFEB1555);
+const Color customInactiveColor = Color(0xFF111328);
+const double customButtonHeight = 80.0;
+
 class _InputPageState extends State<InputPage> {
-  final Color customCardColor = Color(0xFF1D1E33);
-  final Color customButtonColor = Color(0xFFEB1555);
-  final double customButtonHeight = 80.0;
+  Color maleCardColor = customInactiveColor;
+  Color femaleCardColor = customInactiveColor;
+
+  // 1 = male, 2 = female
+  void updateColor(int selectGender){
+    if(selectGender == 1){
+      if(maleCardColor == customInactiveColor){
+        maleCardColor = customCardColor;
+        femaleCardColor = customInactiveColor;
+      } else {
+        maleCardColor = customInactiveColor;
+      }
+    } else if(selectGender == 2){
+      if(femaleCardColor == customInactiveColor){
+        femaleCardColor = customCardColor;
+        maleCardColor = customInactiveColor;
+      } else {
+        femaleCardColor = customInactiveColor;
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,29 +49,47 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                ReusableCard(
-                  colour: customCardColor, 
-                  cardChild: ButtonIcon(icon: FontAwesomeIcons.mars, text: "MALE"), 
+                Expanded(
+                  child: ReusableCard(
+                    colour: updateColor(1), 
+                    cardChild: ButtonIcon(icon: FontAwesomeIcons.mars, text: "MALE"), 
+                  ),
                 ),
   
-                ReusableCard(
-                  colour: customCardColor, 
-                  cardChild: ButtonIcon(icon: FontAwesomeIcons.venus, text: "FEMALE"),
+                
+                Expanded(
+                  child: ReusableCard(
+                    colour: updateColor(2), 
+                    cardChild: ButtonIcon(icon: FontAwesomeIcons.venus, text: "FEMALE"),
+                  ),
                 ),
+                
               ],
             ),
           ),
-          ReusableCard(colour: customCardColor),
+          Expanded(
+            child: ReusableCard(
+              colour: customInactiveColor
+            )
+          ),
           Expanded(
             child: Row(
               children: [
-                ReusableCard(
-                  colour: customCardColor, 
+                Expanded(
+                  child: ReusableCard(
+                    colour: customInactiveColor, 
+                    cardChild: ButtonIcon(icon: FontAwesomeIcons.mars, text: "MALE"), 
+                  ),
                 ),
   
-                ReusableCard(
-                  colour: customCardColor, 
+                
+                Expanded(
+                  child: ReusableCard(
+                    colour: customInactiveColor, 
+                    cardChild: ButtonIcon(icon: FontAwesomeIcons.venus, text: "FEMALE"),
+                  ),
                 ),
+                
               ],
             ),
           ),
