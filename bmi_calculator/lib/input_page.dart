@@ -15,20 +15,26 @@ const Color customButtonColor = Color(0xFFEB1555);
 const Color customInactiveColor = Color(0xFF111328);
 const double customButtonHeight = 80.0;
 
+enum Gender {
+  male,
+  female
+}
+
+
 class _InputPageState extends State<InputPage> {
   Color maleCardColor = customInactiveColor;
   Color femaleCardColor = customInactiveColor;
 
   // 1 = male, 2 = female
-  void updateColor(int selectGender){
-    if(selectGender == 1){
+  void updateColor(Gender selectGender){
+    if(selectGender == Gender.male){
       if(maleCardColor == customInactiveColor){
         maleCardColor = customCardColor;
         femaleCardColor = customInactiveColor;
       } else {
         maleCardColor = customInactiveColor;
       }
-    } else if(selectGender == 2){
+    } else if(selectGender == Gender.female){
       if(femaleCardColor == customInactiveColor){
         femaleCardColor = customCardColor;
         maleCardColor = customInactiveColor;
@@ -51,7 +57,7 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: GestureDetector(
-                    onTap: () => setState(() => updateColor(1)),
+                    onTap: () => setState(() => updateColor(Gender.male)),
                     child: ReusableCard(
                       colour: maleCardColor, 
                       cardChild: ButtonIcon(icon: FontAwesomeIcons.mars, text: "MALE"), 
@@ -61,7 +67,7 @@ class _InputPageState extends State<InputPage> {
                 
                 Expanded(
                   child: GestureDetector(
-                    onTap: () => setState(() => updateColor(2)),
+                    onTap: () => setState(() => updateColor(Gender.female)),
                     child: ReusableCard(
                       colour: femaleCardColor, 
                       cardChild: ButtonIcon(icon: FontAwesomeIcons.venus, text: "FEMALE"),
