@@ -88,19 +88,26 @@ class _InputPageState extends State<InputPage> {
                       )
                     ],
                   ),
-                  Slider(
-                    value: height.toDouble(), // Converte o int 'height' para double
-                    min: 120.0,
-                    max: 220.0,
-                    activeColor: Color(0xFFEB1555),
-                    inactiveColor: Color(0xFF8D8E98),
-                    thumbColor: Color(0xFFEB1555),
-                    onChanged: (double newValue) {
-                      setState(() {
-                        // O segredo está aqui: arredondar o valor e atualizar o estado
-                        height = newValue.round(); 
-                      });
-                    },
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                      activeTrackColor: Color(0xFFEB1555),
+                      inactiveTrackColor: Color(0xFF8D8E98),
+                      thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                      overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
+                      overlayColor: Color(0x29EB1555),
+                      thumbColor: Color(0xFFEB1555),
+                    ),
+                    child: Slider(
+                      value: height.toDouble(), // Converte o int 'height' para double
+                      min: 120.0,
+                      max: 220.0,
+                      onChanged: (double newValue) {
+                        setState(() {
+                          // O segredo está aqui: arredondar o valor e atualizar o estado
+                          height = newValue.round(); 
+                        });
+                      },
+                    ),
                   ),
                 ],
               ),
